@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emoji Camera</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/face-api.js@0.22.2/dist/face-api.min.js"></script>
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <header class="hero">
+    <div>
+      <p class="eyebrow">GitHub Pages demo</p>
+      <h1>Emoji Camera</h1>
+      <p class="lede">Grant camera access, let the model read your expression, and we will show an emoji that mirrors your mood.</p>
+      <button id="start">Start camera</button>
+      <p id="status" class="status">Models are loading…</p>
+    </div>
+  </header>
+
+  <main class="grid">
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Live camera</h2>
+      </div>
+      <div class="video-frame">
+        <video id="video" autoplay muted playsinline></video>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-header">
+        <h2>Current emoji</h2>
+      </div>
+      <div class="emoji-stage">
+        <div id="emoji" aria-live="polite" aria-label="Neutral face" class="emoji">😐</div>
+        <p id="emoji-label" class="emoji-label">Neutral</p>
+      </div>
+      <div class="legend">
+        <p class="legend-title">Detected expressions</p>
+        <ul id="expression-list"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Works entirely in the browser. No images leave your device.</p>
+  </footer>
+</body>
+</html>
